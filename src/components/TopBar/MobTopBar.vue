@@ -2,6 +2,9 @@
 import Menu from './Menu.vue';
 import WalletBtn from '@cps/WalletBtn/index.vue';
 import { useTopBar } from './useTopBar';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 
 const { launchTo } = useTopBar();
 
@@ -15,7 +18,7 @@ function handleMenu() {
 </script>
 
 <template>
-  <div class="top-bar-wrap">
+  <div :class="['top-bar-wrap', route.meta?.topbar]">
     <div :class="['logo-name', { opening: isOpenMenu }]" @click="launchTo({ urlName: 'home' })">
       <img class="light" src="@img/common/logo-name.png" alt="" />
       <img class="dark" src="@img/common/logo-name-color.png" alt="" />
@@ -65,15 +68,6 @@ function handleMenu() {
   > .light {
     opacity: 1;
   }
-
-  &.opening {
-    > .light {
-      opacity: 0;
-    }
-    > .dark {
-      opacity: 1;
-    }
-  }
 }
 
 .toggle-container {
@@ -112,6 +106,22 @@ function handleMenu() {
     .bar {
       background-color: #000;
     }
+  }
+}
+
+.top-bar-wrap.dark .toggle-container {
+  .bar {
+    background-color: #000;
+  }
+}
+
+.top-bar-wrap.dark,
+.logo-name.opening {
+  .light {
+    opacity: 0;
+  }
+  .dark {
+    opacity: 1;
   }
 }
 </style>

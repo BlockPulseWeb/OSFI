@@ -45,7 +45,6 @@
   margin: 0 auto;
   @include flexPos(center);
   flex-direction: column;
-  background-color: pink;
   padding: 44rem;
 }
 .about-content {

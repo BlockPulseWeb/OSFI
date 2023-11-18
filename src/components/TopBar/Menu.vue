@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { menuList } from './useTopBar';
 import { useTopBar } from './useTopBar';
-import BpClose from '@cps/BpClose/index.vue';
-import ColorfulBorder from '@cps/ColorfulBorder/index.vue';
 import { useContact } from '@hooks/useContact';
 
 const { contactList } = useContact();
