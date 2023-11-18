@@ -46,6 +46,7 @@ const { contactList, launchTo } = useContact();
 
     .contact-item {
       width: 40rem;
+      cursor: pointer;
 
       &:not(:first-child) {
         margin-left: 43rem;

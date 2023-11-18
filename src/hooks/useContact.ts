@@ -41,7 +41,7 @@ export const useContact = () => {
     {
       text: 'Github',
       logo: require('@img/common/icon-contact5.png'),
-      link: '',
+      link: 'https://github.com/BlockPulseWeb/QSFI',
       width: 36,
     },
   ]);
