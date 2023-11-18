@@ -3,7 +3,7 @@ import { menuList } from './useTopBar';
 import { useTopBar } from './useTopBar';
 import { useContact } from '@hooks/useContact';
 
-const { contactList } = useContact();
+const { contactList, launchTo: launchToLink } = useContact();
 
 const { launchTo } = useTopBar();
 
@@ -16,6 +16,8 @@ const $emits = defineEmits<{
 }>();
 
 const handleLaunchTo = (item) => {
+  console.log('item ...', item);
+
   launchTo(item);
   $emits('hide');
 };
@@ -69,7 +71,12 @@ const handleLaunchTo = (item) => {
           </div>
 
           <div class="mt-90">
-            <li v-for="item in contactList" :key="item.text" class="flex mt-40">
+            <li
+              @click="launchToLink(item.link)"
+              v-for="item in contactList"
+              :key="item.text"
+              class="flex mt-40"
+            >
               <div class="w-44 flex-center mr-14">
                 <img :src="item.logo" alt="" :class="[`w-[${item.width}]`]" />
               </div>

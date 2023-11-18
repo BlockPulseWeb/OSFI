@@ -2842,6 +2842,11 @@ sass@^1.54.4:
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
 
+scroll-out@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.npmmirror.com/scroll-out/-/scroll-out-2.2.12.tgz#6b092e24fd726e73b81cd10519b4769d648c07b6"
+  integrity sha512-BPWQJat8mmcjQCq+l4DsibBopkmQQb5ngPJ6T9XRxRl86/LJo7V+0d3Sjd9fxzIJkZmkjoGxEAam+Urvem8VRw==
+
 scrypt-js@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/scrypt-js/-/scrypt-js-3.0.1.tgz#d314a57c2aef69d1ad98a138a21fe9eafa9ee312"
@@ -3052,6 +3057,11 @@ tar-stream@^2.1.4:
     fs-constants "^1.0.0"
     inherits "^2.0.3"
     readable-stream "^3.1.1"
+
+textify.js@2.4.3:
+  version "2.4.3"
+  resolved "https://registry.npmmirror.com/textify.js/-/textify.js-2.4.3.tgz#881593a00d7286c8105639be3dcac498c30cd5b0"
+  integrity sha512-gn9pCbNzgz2vU+nWXbAzA6GioNGmm5tDD6fnXMTrcyyIOrRkFfwqNttsXgxBmMcILQ7MaKVwt2rTFJP6z2h8sA==
 
 tiny-emitter@^2.1.0:
   version "2.1.0"

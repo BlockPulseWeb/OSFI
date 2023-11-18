@@ -6,7 +6,7 @@ const setIsShowPanel = () => {
 </script>
 
 <template>
-  <div class="folder-wrap">
+  <div class="folder-wrap animate__animated left">
     <header class="fold-header" @click="setIsShowPanel">
       <section class="fold-content">
         <slot name="face"> </slot>
@@ -40,7 +40,6 @@ const setIsShowPanel = () => {
   .fold-header {
     @include flexPos(space-between);
     cursor: pointer;
-    background-color: pink;
 
     .fold-content {
       display: flex;
@@ -54,7 +53,7 @@ const setIsShowPanel = () => {
   }
 
   .icon-arrow {
-    width: 16rem;
+    width: 20rem;
     transition: all 0.5s;
 
     &.show {

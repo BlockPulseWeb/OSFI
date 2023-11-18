@@ -91,7 +91,7 @@ const swiperOptions = reactive({
   @include -margin-top(300rem, 500rem, 500rem);
   position: relative;
   @include flexPos(center);
-  background-color: plum;
+  /* background-color: plum; */
 
   :deep(.swiper) {
     width: 100%;
@@ -107,7 +107,7 @@ const swiperOptions = reactive({
 
       .item-container {
         @include flexPos(flex-start);
-        background-color: pink;
+        /* background-color: pink; */
         transition: all 0.7s;
       }
     }
@@ -130,10 +130,12 @@ const swiperOptions = reactive({
       .item-container {
         /* transform: scale(1.7); */
         /* @include -font-size(24rem, 24rem, 24rem); */
+        background-color: #fff6f6;
       }
 
       .item-time {
         @include -font-size(48rem, 24rem, 24rem);
+        font-weight: bold;
       }
 
       .item-content {

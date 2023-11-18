@@ -70,6 +70,7 @@ const swiperOptions = computed(() => {
       @media (min-width: $phone) {
         .item-container {
           transform: scale(1.7);
+          filter: none;
 
           .slide-title {
             @include -font-size(40rem, 22pm, 22pw);
@@ -83,7 +84,13 @@ const swiperOptions = computed(() => {
       @include flexPos(center);
       flex-direction: column;
       @include -height(800rem, 800pm, 800pw);
-      background-color: red;
+      /* background-color: red; */
+      background: linear-gradient(180deg, #fff5f5 0%, #fff5fb 0%, rgba(255, 245, 245, 0) 100%);
+      border-radius: 80rem 80rem 0px 0px;
+
+      @media (min-width: $phone) {
+        filter: blur(3px);
+      }
 
       .item-img {
         cursor: pointer;
@@ -108,10 +115,11 @@ const swiperOptions = computed(() => {
 
 :deep(.swiper-pagination) {
   .swiper-pagination-bullet {
-    background-color: #edd9d9 !important;
+    background-color: #ecd8d8;
+    opacity: 1;
   }
   .swiper-pagination-bullet-active {
-    background-color: #ff9090;
+    background-color: #ff8f8f;
   }
 }
 </style>

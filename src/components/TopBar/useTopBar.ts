@@ -9,6 +9,7 @@ export interface IMemu {
   logo: any;
   urlName: string;
   active: boolean;
+  link?: string;
   children?: IMemu[];
 }
 
@@ -32,7 +33,8 @@ const menuListValue = reactive<IMemu[]>([
     id: 3,
     name: 'Developers',
     logo: require('@img/holder.png'),
-    urlName: 'developers',
+    urlName: '',
+    link: '',
     active: false,
   },
 ]);
@@ -97,18 +99,17 @@ export const useTopBar = () => {
       return;
     }
 
-    if (item.urlName === '' || item.urlName === '/') {
-      ElMessage({
-        type: 'info',
-        message: $t('base.2'),
-      });
+    // 组件跳转
+    if (item.urlName !== '') {
+      router.push({ name: item.urlName });
       return;
     }
 
-    // 组件跳转
-    if (item.urlName !== '/') {
-      router.push({ name: item.urlName });
-    }
+    console.log('lllll');
+    ElMessage({
+      type: 'info',
+      message: 'Comming soon!',
+    });
   }
 
   /**

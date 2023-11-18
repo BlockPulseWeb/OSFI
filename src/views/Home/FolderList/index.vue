@@ -103,7 +103,6 @@ import Folder from '@cps/Folder/index.vue';
 <style lang="scss" scoped>
 .folder-list {
   align-items: flex-start;
-  background-color: red;
   @include -width(100%, 90%, 1200rem);
   margin: 0 auto;
   @include -margin-top(358rem, 358pm, 358pw);

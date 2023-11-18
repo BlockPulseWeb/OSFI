@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import { useContact } from '@hooks/useContact';
 
-const { contactList } = useContact();
-
-const launchTo = (link: string) => {
-  window.open(link);
-};
+const { contactList, launchTo } = useContact();
 </script>
 
 <template>
@@ -38,7 +34,8 @@ const launchTo = (link: string) => {
   font-family: Montserrat, Montserrat;
   font-weight: 400;
   color: #000;
-  background: linear-gradient(135deg, #3c82fa 0%, #ff00ff 50%, #f76c3e 100%);
+  /* background: linear-gradient(135deg, #3c82fa 0%, #ff00ff 50%, #f76c3e 100%); */
+  background: linear-gradient(135deg, #3c82fa69 0%, #ff00ff6a 50%, #f76c3e57 100%);
   /* @include flexPos(space-between); */
   display: flex;
   justify-content: center;

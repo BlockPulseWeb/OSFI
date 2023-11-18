@@ -35,7 +35,7 @@ const props = defineProps<{
   @include -width(100%, 100%, 1300rem);
   margin-left: auto;
   margin-right: auto;
-  background-color: red;
+  /* background-color: red; */
 
   @media (min-width: $phone) {
     @include flexPos(center);
