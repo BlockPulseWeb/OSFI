@@ -6,7 +6,7 @@ const setIsShowPanel = () => {
 </script>
 
 <template>
-  <div class="folder-wrap animate__animated left">
+  <div class="folder-wrap animate__animated fade-left">
     <header class="fold-header" @click="setIsShowPanel">
       <section class="fold-content">
         <slot name="face"> </slot>
@@ -46,7 +46,7 @@ const setIsShowPanel = () => {
       align-items: center;
 
       .fold-title {
-        @include -font-size(24rem, 32pm, 32pw);
+        @include -font-size(24rem, 32pm, 32rem);
         font-weight: bold;
       }
     }
@@ -65,7 +65,7 @@ const setIsShowPanel = () => {
     box-sizing: border-box;
     /* margin-top: 34rem; */
     /* padding: 9rem; */
-    @include -font-size(24rem, 24pm, 24pw);
+    @include -font-size(24rem, 24pm, 24rem);
 
     color: #5d5d5d;
     font-family: Montserrat, Montserrat;

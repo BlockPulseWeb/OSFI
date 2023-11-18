@@ -17,7 +17,7 @@ export interface IMemu {
 const menuListValue = reactive<IMemu[]>([
   {
     id: 1,
-    name: 'home',
+    name: 'Home',
     logo: require('@img/holder.png'),
     urlName: 'home',
     active: false,

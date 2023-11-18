@@ -78,7 +78,7 @@ const handleLaunchTo = (item) => {
               class="flex mt-40"
             >
               <div class="w-44 flex-center mr-14">
-                <img :src="item.logo" alt="" :class="[`w-[${item.width}]`]" />
+                <img :src="item.logo" alt="" :style="{ width: item.width + 'rem' }" />
               </div>
               <span class="text-32 text-#000">{{ item.text }}</span>
             </li>

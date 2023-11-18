@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ColorfulBallBg from '@cps/ColorfulBallBg/index.vue';
+import { ElMessage } from 'element-plus';
 
 const showColorful = ref(false);
 setTimeout(() => {
@@ -8,6 +9,10 @@ setTimeout(() => {
 const showColorfulBallBg = computed(() => {
   return showColorful.value;
 });
+
+const learnMore = () => {
+  ElMessage.info('Comming soon!');
+};
 </script>
 
 <template>
@@ -15,7 +20,7 @@ const showColorfulBallBg = computed(() => {
     <div class="header-text">
       Next-Generation Decentralized Financial System With An Object-Oriented Approach
     </div>
-    <button class="learn-more-btn">Learn More</button>
+    <button class="learn-more-btn" @click="learnMore">Learn More</button>
 
     <div class="color-full-balls" v-if="showColorfulBallBg">
       <ColorfulBallBg dir="left" />
@@ -45,6 +50,8 @@ const showColorfulBallBg = computed(() => {
 
   .header-text {
     padding: 20rem 449rem 0;
+    position: relative;
+    z-index: 999;
 
     @media (max-width: $pc) {
       padding: 20rem 30rem 0;

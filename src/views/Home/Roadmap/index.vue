@@ -109,6 +109,7 @@ const swiperOptions = reactive({
         @include flexPos(flex-start);
         /* background-color: pink; */
         transition: all 0.7s;
+        padding: 9rem 22rem;
       }
     }
 
@@ -131,6 +132,7 @@ const swiperOptions = reactive({
         /* transform: scale(1.7); */
         /* @include -font-size(24rem, 24rem, 24rem); */
         background-color: #fff6f6;
+        /* padding: 9rem 22rem; */
       }
 
       .item-time {

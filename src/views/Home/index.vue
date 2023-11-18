@@ -11,13 +11,7 @@ import textifyJs from 'textify.js';
 const appStore = useAppStore();
 
 const isHightLight = ref(false);
-setTimeout(() => {
-  isHightLight.value = true;
-}, 1000);
 
-console.log('textifyJs...', textifyJs);
-
-const { TextifyTitle, Textify } = textifyJs;
 onMounted(() => {
   ScrollOut({
     threshhold: 0.5,
@@ -52,34 +46,12 @@ onMounted(() => {
   });
 
   ScrollOut({
-    targets: '.fades',
+    targets: '.fade-left',
     offset: 0,
     onShown: function (el) {
-      // // remove the class
-      el.classList.remove('animate__fadeOutUp');
-
-      // force reflow
-      void el.offsetWidth;
-
-      // re-add the animated cl
-      el.classList.add('animate__fadeInUp');
-    },
-    /* onHidden: function (el) {
-      // remove the class
-      el.classList.remove("animate__fadeInUp");
-
-      // force reflow
-      void el.offsetWidth;
-
-      // re-add the animated cl
-      el.classList.add("animate__fadeOutUp");
-    } */
-  });
-
-  ScrollOut({
-    targets: '.left',
-    offset: 0,
-    onShown: function (el) {
+      if (el.id === 'rightIntroText') {
+        isHightLight.value = true;
+      }
       // // remove the class
       el.classList.remove('animate__fadeOutLeft');
       el.classList.remove('hue-anima');
@@ -96,6 +68,9 @@ onMounted(() => {
       }, 2000);
     },
     onHidden: function (el) {
+      if (el.id === 'rightIntroText') {
+        isHightLight.value = false;
+      }
       // remove the class
       el.classList.remove('animate__fadeInLeft');
 
@@ -103,48 +78,52 @@ onMounted(() => {
       void el.offsetWidth;
 
       // re-add the animated cl
-      el.classList.add('animate__fadeOutLeft');
+      // el.classList.add('animate__fadeOutLeft');
     },
   });
 
-  // const titleObj = new TextifyTitle({
-  //   selector: '.title',
-  //   duration: 500,
-  //   stagger: 40,
-  //   fade: true,
-  //   top: false,
-  //   reveal: true,
-  //   once: false,
-  //   rotation: 0,
-  //   scale: 1,
-  //   easing: 'linear',
-  //   fadeEasing: 'backOut',
-  //   fadeDuration: 200,
-  //   threshold: 1,
-  //   transformOrigin: 'center center',
-  // });
+  ScrollOut({
+    targets: '.fade-right',
+    offset: 0,
+    onShown: function (el) {
+      console.log('erlllll', el.id);
+      // // remove the class
+      el.classList.remove('animate__fadeOutRight');
+      el.classList.remove('hue-anima');
 
-  // const textObj = new Textify({
-  //   selector: '.paragraph',
-  //   duration: 3500,
-  //   stagger: 300,
-  //   fade: true,
-  //   top: false,
-  //   once: false,
-  //   rotation: 0,
-  //   scale: 0.75,
-  //   easing: 'easeOut',
-  //   fadeEasing: 'back',
-  // });
+      // force reflow
+      void el.offsetWidth;
+
+      // re-add the animated cl
+      el.classList.add('animate__fadeInRight');
+
+      setTimeout(() => {
+        el.classList.remove('animate__fadeInRight');
+        el.classList.add('hue-anima');
+      }, 2000);
+    },
+    onHidden: function (el) {
+      // remove the class
+      el.classList.remove('animate__fadeInRight');
+
+      // force reflow
+      void el.offsetWidth;
+
+      // el.classList.add('animate__fadeOutRight');
+    },
+  });
 });
 </script>
 
 <template>
   <div class="home-wrap">
+    <div class="color-ball color-ball-left"></div>
+    <div class="color-ball color-ball-right"></div>
+
     <Header />
 
     <main :class="['home-main', { 'hight-light': isHightLight }]">
-      <IntroText class="mt-222 md:mt-[204pm] lg:mt-[204pw]" dir="left">
+      <IntroText id="leftIntroText" class="mt-222 md:mt-[204pm] lg:mt-[204pw]" dir="left">
         <template #thinText>
           OSFI is the abbreviation for Object-oriented System Finance, which stands for the next
           generation of object-oriented financial systems.
@@ -166,11 +145,15 @@ onMounted(() => {
         </template>
 
         <template #main>
-          <img src="@img/home/img-chain.png" alt="" class="sm:w-444 md:w-[373pw] mx-auto" />
+          <img
+            src="@img/home/img-chain.png"
+            alt=""
+            class="sm:w-444 md:w-[373pw] mx-auto animate__animated fade-left"
+          />
         </template>
       </IntroText>
 
-      <IntroText class="mt-128 md:mt-[204pm] lg:mt-[204pw]">
+      <IntroText id="rightIntroText" class="mt-128 md:mt-[204pm] lg:mt-[204pw]">
         <template #thinText>
           aiming to provide object-oriented, secure, efficient, and decentralized financial tools
           and services for the BTC main chain and its second-layer networks.
@@ -184,16 +167,19 @@ onMounted(() => {
         </template>
 
         <template #main>
-          <img src="@img/home/img-chain2.png" alt="" class="sm:w-444 md:w-[373pw] mx-auto" />
+          <img
+            src="@img/home/img-chain2.png"
+            alt=""
+            class="sm:w-444 md:w-[373pw] mx-auto animate__animated fade-right"
+          />
         </template>
       </IntroText>
 
       <HomeSlide />
 
       <FoldList />
-
-      <Roadmap />
     </main>
+    <Roadmap />
   </div>
 </template>
 
@@ -230,6 +216,36 @@ onMounted(() => {
     &::after {
       width: 100% !important;
     }
+  }
+}
+
+.color-ball {
+  width: 100rem;
+  height: 600rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 0 3000px #c63dce;
+  filter: blur(100px);
+  /* backdrop-filter: blur(100px); */
+
+  /* width: 950rem; */
+  /* height: 950rem; */
+  /* filter: blur(500px); */
+
+  &.color-ball-left {
+    background-color: #c63dce;
+    left: 0;
+    top: 35%;
+  }
+
+  &.color-ball-right {
+    /* width: 250rem; */
+    /* height: 250rem; */
+    background-color: rgb(233, 87, 87);
+    right: 0;
+    top: 60%;
+    /* transform: translateX(80%); */
   }
 }
 </style>

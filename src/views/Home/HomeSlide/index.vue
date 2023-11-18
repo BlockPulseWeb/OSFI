@@ -20,7 +20,7 @@ const swiperOptions = computed(() => {
 </script>
 
 <template>
-  <div class="home-slide-wrap">
+  <div class="home-slide-wrap animate__animated fade-left">
     <bp-swiper :option="swiperOptions">
       <swiper-slide v-for="slideItem in slideList" :key="slideItem.id">
         <div class="item-container">
@@ -60,7 +60,7 @@ const swiperOptions = computed(() => {
     .swiper-slide {
       text-align: center;
       @include flexPos(center);
-      opacity: 0.5;
+      /* opacity: 0.5; */
     }
 
     .swiper-slide-active {
@@ -69,7 +69,7 @@ const swiperOptions = computed(() => {
 
       @media (min-width: $phone) {
         .item-container {
-          transform: scale(1.7);
+          /* transform: scale(1.7); */
           filter: none;
 
           .slide-title {
@@ -83,14 +83,15 @@ const swiperOptions = computed(() => {
       transition: 0.8s;
       @include flexPos(center);
       flex-direction: column;
-      @include -height(800rem, 800pm, 800pw);
+      @include -height(800rem, 500pm, 500pw);
       /* background-color: red; */
       background: linear-gradient(180deg, #fff5f5 0%, #fff5fb 0%, rgba(255, 245, 245, 0) 100%);
+      /* background-color: red; */
       border-radius: 80rem 80rem 0px 0px;
 
-      @media (min-width: $phone) {
+      /* @media (min-width: $phone) {
         filter: blur(3px);
-      }
+      } */
 
       .item-img {
         cursor: pointer;

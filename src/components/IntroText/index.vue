@@ -1,12 +1,16 @@
 <script setup lang="ts">
 const props = defineProps<{
   dir?: 'left' | 'right'; // left图在左边
+  id?: string;
 }>();
 </script>
 
 <template>
   <div :class="['intro-text-wrap sm:px-0 md:px-0', { left: props.dir === 'left' }]">
-    <div class="text-content">
+    <div
+      :id="props.id"
+      :class="['text-content animate__animated', props.dir === 'left' ? 'fade-right' : 'fade-left']"
+    >
       <div class="thin-text">
         <slot name="thinText"></slot>
       </div>

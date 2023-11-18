@@ -10,7 +10,7 @@
 
 <style lang="scss" scoped>
 .line-wrap {
-  @include -width(150rem, 170rem, 170rem);
+  @include -width(160rem, 180rem, 180rem);
   height: 100%;
   position: absolute;
   left: 0;

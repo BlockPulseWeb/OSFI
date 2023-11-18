@@ -30,6 +30,7 @@ export default {
 
 <style lang="scss">
 #mainContainer {
+  min-height: 100vh;
   /* padding-top: $mobTopBarHeight; */
   z-index: 2;
   position: relative;
