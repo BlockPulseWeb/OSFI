@@ -6,7 +6,6 @@ import Roadmap from './Roadmap/index.vue';
 import FoldList from './FolderList/index.vue';
 import { useAppStore } from '@/store/appStore';
 import ScrollOut from 'scroll-out';
-import textifyJs from 'textify.js';
 
 const appStore = useAppStore();
 

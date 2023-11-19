@@ -3058,11 +3058,6 @@ tar-stream@^2.1.4:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-textify.js@2.4.3:
-  version "2.4.3"
-  resolved "https://registry.npmmirror.com/textify.js/-/textify.js-2.4.3.tgz#881593a00d7286c8105639be3dcac498c30cd5b0"
-  integrity sha512-gn9pCbNzgz2vU+nWXbAzA6GioNGmm5tDD6fnXMTrcyyIOrRkFfwqNttsXgxBmMcILQ7MaKVwt2rTFJP6z2h8sA==
-
 tiny-emitter@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
