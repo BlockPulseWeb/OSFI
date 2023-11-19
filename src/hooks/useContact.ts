@@ -29,7 +29,7 @@ export const useContact = () => {
     {
       text: 'X',
       logo: require('@img/common/icon-contact7.png'),
-      link: '',
+      link: 'https://twitter.com/osfi_btc',
       width: 30,
     },
     {
