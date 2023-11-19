@@ -15,7 +15,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  border-right: dashed 1rem #ff5e5e6a;
+  border-right: dashed 1px #ff5e5e6a;
   z-index: 999;
 
   > .line-item {

@@ -115,13 +115,13 @@ const swiperOptions = reactive({
 
     .item-time {
       @include -font-size(24rem, 24rem, 24rem);
-      transition: all 0.7s;
+      transition: font-size 0.3s;
     }
 
     .item-content {
       margin-left: 100rem;
       @include -font-size(24rem, 16rem, 16rem);
-      transition: all 0.7s;
+      /* transition: font-size 0.1s; */
     }
 
     .swiper-slide-active {
@@ -137,12 +137,15 @@ const swiperOptions = reactive({
 
       .item-time {
         @include -font-size(48rem, 24rem, 24rem);
+        /* transform: scale(1.7); */
         font-weight: bold;
       }
 
       .item-content {
         margin-left: 100rem;
         @include -font-size(24rem, 24rem, 24rem);
+        /* transform: scale(1.2); */
+        /* height: 250rem; */
       }
     }
   }
